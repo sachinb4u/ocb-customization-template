@@ -1,19 +1,17 @@
-# Configure Repositories
--plugin.1.Central: \
-	aQute.bnd.deployer.repository.wrapper.Plugin; \
-		location = "${build}/cache/wrapper"; \
-		reindex = true, \
-	aQute.bnd.jpm.Repository; \
-		includeStaged = true; \
-		name = Central; \
-		location = ~/.bnd/shacache; \
-		index = ${build}/central.json
-
--plugin.2.Local: \
+# *********************************************************************************************************************
+# Configure OSGi Bundle Repositories (OBR)
+# *********************************************************************************************************************
+-plugin.1.Local: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
 		name = Local; \
 		pretty = true; \
 		local = ${build}/local
+
+-plugin.2.Release: \
+	aQute.bnd.deployer.repository.LocalIndexedRepo; \
+		name = Release; \
+		pretty = true; \
+		local = ${build}/release
 
 -plugin.3.Templates: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
@@ -21,14 +19,238 @@
 		pretty = true; \
 		local = ${build}/templates
 
--plugin.4.Release: \
+-plugin.4.OCB-Build: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
-		name = Release; \
+		name = OCB Build; \
 		pretty = true; \
-		local = ${build}/release
-
+		local = ${build}/ocb-build
+		
+-plugin.5.OCB: \
+	aQute.bnd.deployer.repository.LocalIndexedRepo; \
+		name = OCB Release; \
+		pretty = true; \
+		local = ${build}/ocb
+		
 -releaserepo: Release
 -baselinerepo: Release
 
-# JUnit
-junit: org.apache.servicemix.bundles.junit; version=4.12
+
+
+
+# *********************************************************************************************************************
+# defines value for SNAPSHOT, if SNAPSHOT is added in Bundle-Version, it will be replaced by below defined value 
+#	i.e. timestamp. eg. 8.3.2.SNAPSHOT will be converted to 8.3.2-201610260636
+# *********************************************************************************************************************
+-snapshot: ${tstamp}
+
+
+# *********************************************************************************************************************
+# Adds Bundle-Blueprint header to Manifest for all projects in workspace. 
+# If blueprintfiles are empty. this header won't be added.
+# If Bundle-Blueprint header is present, 
+#		XML files are processed to add packages referred to Import-Package header
+# *********************************************************************************************************************
+blueprintfiles: ${findpath;META-INF/(.*).xml}
+Bundle-Blueprint: ${blueprintfiles}
+
+
+
+
+# ********************************************************************************************************************* 
+# Custom Headers for Dozer, EDM and Validation xmls
+# Search for Dozer, EDM and Validation files and add Custom Headers in Manifest
+# *********************************************************************************************************************
+dozerfiles: ${findpath;dozer(.*).xml}
+edmfiles: ${findpath;(.*)Edm.xml}
+validationfiles: ${findpath;validation(.*).xml}
+
+X-Dozer: ${dozerfiles}
+X-EDM: ${edmfiles}
+X-Validations: ${validationfiles}
+
+
+
+
+# *********************************************************************************************************************
+# Bnd Analyzer Plugings : Gets called for every project build and processes resources for that particular project/bundle
+# *********************************************************************************************************************
+#
+#	SpringXMLType - processes blueprint/spring xmls and adds referred packages in Import-Package
+#
+#	BlueprintAnalyzerPlugin - processes blueprint/spring xmls and adds Require-Capability and Provide-Capability
+#								header to Manifest based osgi:service and osgi:reference in xmls
+#
+#	DozerAnalyzerPlugin - refers X-Dozer manifest header conataining dozer xml paths in bundle and adds imports for
+#								all referred packages
+# 
+#	EdmAnalyzerPlugin - refers X-EDM manifest header containing edm xml paths in bundle and adds imports and
+#								all referred packages
+#
+#	ValidationsAnalyzerPlugin - refers X-Validations manifest header containing validation xml paths in bundle and  
+#								adds imports for all referred packages
+# *********************************************************************************************************************
+-pluginpath: ${workspace}/cnf/ocb-build/com.sap.banking.blueprint.plugin/com.sap.banking.blueprint.plugin-1.3.0.jar
+
+-plugin.blueprint : aQute.lib.spring.SpringXMLType
+
+-plugin.blueprint-banking : com.sap.banking.blueprint.plugin.BlueprintAnalyzerPlugin
+
+-plugin.dozer : com.sap.banking.dozer.plugin.DozerAnalyzerPlugin
+
+-plugin.edm : com.sap.banking.edm.plugin.EdmAnalyzerPlugin 
+
+-plugin.validation : com.sap.banking.validations.plugin.ValidationsAnalyzerPlugin
+
+
+
+
+# *********************************************************************************************************************
+# Change Bundle-Vendor value to your Company Name and remove ${warning} after updating name
+# *********************************************************************************************************************
+Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd and remove warning }
+
+
+
+
+# *********************************************************************************************************************
+## Bnd Project Source/Binary Options
+# *********************************************************************************************************************
+-sources:              false								# should include source files in jar?
+#-sourcepath:           ${project}/src/main/java				# source directory 
+#src=src/main/java
+#bin=target/classes
+#testsrc=src/test/java
+#testbin=target/test-classes
+#target-dir=target
+#include src/main/resource if any files present
+#-includeresource.maven: ${if;${isdir;${project}/src/main/resources};src/main/resources;} 
+
+
+
+
+# ********************************************************************************************************************* 
+# Run options used in framework launch
+# Default: runframework is Felix 
+# *********************************************************************************************************************
+-runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
+
+# should framework bundles be kept on multiple run, keep it false to take updated bundles on every run
+-runkeep: false 	
+
+# storage directory for osgi framework while running
+-runstorage: target/fw-generated
+
+
+
+
+# *********************************************************************************************************************
+# Default BuildPath for every project
+# 
+# 	Add osgi.core, junit, mockito as default buildpath for all bundles
+#
+# *********************************************************************************************************************
+-buildpath.junit:\
+	osgi.core;version=6.0,\
+	org.apache.servicemix.bundles.junit; version=4.11,\
+	org.mockito.mockito-core;version=1.9.5,\
+	org.objenesis;version=2.1.0
+
+
+
+
+# *********************************************************************************************************************
+# Include framework.properties defined values for 
+#		org.osgi.framework.system.packages
+#		felix.log.level
+#		org.osgi.framework.bootdelegation
+#		org.osgi.framework.storage.clean
+# *********************************************************************************************************************
+-include: ${workspace}/cnf/config/framework.properties
+
+# Run properties for framework refer it from framework.properties
+-runproperties.fwk: \
+	org.osgi.framework.bootdelegation="${org.osgi.framework.bootdelegation}", \
+	org.osgi.framework.system.packages=${org.osgi.framework.system.packages},\
+	felix.log.level=${felix.log.level}
+	
+
+
+	
+# *********************************************************************************************************************
+#	Java VM Properties
+# *********************************************************************************************************************
+-runvm.blueprint: \
+				-Dorg.eclipse.gemini.blueprint.extender.internal.boot.ChainActivator.disableBlueprint=true
+
+-runvm.options: \
+				-Xms128m \
+				-Xmx1024m
+
+# default log cofigurations
+-runvm.logging: \
+				-Dlogback.configurationFile=${workspace}/cnf/config/logback.xml
+
+
+
+
+# *********************************************************************************************************************
+#	Resolution specification to specify which requirements to be resolved. 
+#		-resolve.effective: active  - tell bnd resolved to resolve requirement with attribute effective:=active as well
+#
+# *********************************************************************************************************************
+-resolve.effective: active
+
+
+
+
+# ********************************************************************************************************************* 
+# Add capability/requirement to bundle for resolution, below capability/requirement assigned will be used 
+#	while resolving.
+#
+# *********************************************************************************************************************
+-augment.equinox_cm:\
+	org.eclipse.equinox.cm; \
+	capability:="osgi.service; objectClass=org.osgi.service.cm.ConfigurationAdmin"
+	
+-augment.blueprint_extender:\
+	org.eclipse.gemini.blueprint.extender; \
+	capability:="osgi.extender; osgi.extender=osgi.blueprint; version=1.0.0"
+
+# Servlet API provides JavaServlet contract
+-augment.servlet: \
+	javax.servlet; version="3.0.0"; \
+	capability:="osgi.contract; osgi.contract=JavaServlet;version=3.0"	
+	
+-augment.context:\
+	org.springframework.context; version=3.2.14.RELEASE_1; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=org.springframework.expression)(version>=3.2.14.RELEASE))'"	
+	
+-augment.services_web_jaxws:\
+	com.sap.banking.services-web; version="8.3.2"; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=org.apache.cxf.cxf-rt-frontend-jaxws)(version>=2.7.13.sap-01))'"
+
+# olingo-odata2-core is required if olingo-odata2-api is resolved
+-augment.olingo:\
+	olingo-odata2-api; version="1.2.0"; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=olingo-odata2-core)(version>=1.2.0))'"
+
+# bonecp fragment need to added if bonecp bundle is resolved
+# fragment adds db driver imports to bonecp
+-augment.bonecp:\
+	com.jolbox.bonecp; version="0.8.0"; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.bonecp-fragment)(version>=8.3.2))'"
+
+# logback bundles need fragment to provide default logging configuration and 
+# org.eclipse.virgo.medic.log.logback package import 
+-augment.logback_classic:\
+	ch.qos.logback.classic; version="1.0.7"; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.logback-classic-fragment)(version>=8.3.2))'"
+	
+-augment.logback_core:\
+	ch.qos.logback.core; version="1.0.7"; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.logback-core-fragment)(version>=8.3.2))'"
+
+# felix scr bundle is required to run declarative dervices components in felix whiteboard and webconsole
+-augment.felix_scr:\
+	org.apache.felix.http.whiteboard; version="3.0.1"; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=org.apache.felix.scr)(version>=2.0.2))'"
