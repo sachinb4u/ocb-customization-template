@@ -138,7 +138,7 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 -runkeep: false 	
 
 # storage directory for osgi framework while running
--runstorage: target/fw-generated
+-runstorage: generated/fw-storage
 
 
 

@@ -2,4 +2,5 @@
 .metadata
 RemoteSystemsTempFiles
 .recommenders
-com.sap.banking*
+
+/com.sap.banking.templates/

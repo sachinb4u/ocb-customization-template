@@ -1,0 +1,10 @@
+-buildpath: \
+	org.springframework.beans;version=3.2,\
+	com.sap.banking.tutorial.expensemanager.api;version=latest
+
+-includeresource: resources
+
+Private-Package: \
+	com.sap.banking.expensemanager.provider,\
+	com.sap.banking.expensemanager.provider.service,\
+	com.sap.banking.expensemanager.provider.service.impl
