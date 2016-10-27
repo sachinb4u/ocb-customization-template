@@ -123,7 +123,7 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 #testbin=target/test-classes
 #target-dir=target
 #include src/main/resource if any files present
-#-includeresource.maven: ${if;${isdir;${project}/src/main/resources};src/main/resources;} 
+-includeresource.maven: ${if;${isdir;${project}/resources};resources;} 
 
 
 

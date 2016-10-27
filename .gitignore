@@ -4,3 +4,4 @@ RemoteSystemsTempFiles
 .recommenders
 
 /com.sap.banking.templates/
+/com.sap.banking.custom.transfer/
