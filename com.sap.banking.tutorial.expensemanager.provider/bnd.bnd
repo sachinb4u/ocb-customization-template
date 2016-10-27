@@ -8,3 +8,4 @@ Private-Package: \
 	com.sap.banking.expensemanager.provider,\
 	com.sap.banking.expensemanager.provider.service,\
 	com.sap.banking.expensemanager.provider.service.impl
+Bundle-Version: 8.3.2.SNAPSHOT
