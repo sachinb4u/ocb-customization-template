@@ -138,7 +138,9 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 -runkeep: false 	
 
 # storage directory for osgi framework while running
--runstorage: generated/fw-storage
+-runstorage: generated/osgi-fw-storage
+
+-runee: JavaSE-1.8
 
 
 
@@ -192,7 +194,10 @@ runproperties.fwk: \
 -runvm.logging: \
 				-Dlogback.configurationFile=${workspace}/cnf/config/logback.xml
 
-
+-runvm.web:\
+	-Dorg.osgi.service.http.port=8888	
+	
+	
 
 
 # *********************************************************************************************************************
