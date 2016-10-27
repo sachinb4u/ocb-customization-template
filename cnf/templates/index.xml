@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1477557826088" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1477565813042" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="8.3.2.201610270843"/>
+      <attribute name="version" type="Version" value="8.3.2.201610271055"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="9c2c050c75bc4082f53a06556e73855a64cf8bb42f1dddeeb910ecd2d1a4cbd5"/>
+      <attribute name="osgi.content" value="dfa964dac717f3e2d896caa10b2fc3b24feba66c36c9b5c84c30158e180fbc55"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-8.3.2.jar"/>
-      <attribute name="size" type="Long" value="10048"/>
+      <attribute name="size" type="Long" value="11324"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201610270843"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201610271055"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201610270843"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201610271055"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
@@ -36,6 +36,15 @@
       <attribute name="category" value="SAP Omni Channel Banking"/>
       <attribute name="dir" value="template/banking-bndrun"/>
       <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQANUAACCAQSaAQSaIQUGRV16abzqITzOISGatdy2IQUiRV0iaVzqRSEGRT2atbzqIQTN3OkGISEiRT0+aV1ekXi2AMzOIOkGaSEiaTzqIOkGRQVekV0iASGakZnetd63LrbrSutXg1V6aV4i3gG+kXoCtb4i3d5rBiIi3b5G3d5G3b6TBiIDMJsLpeP///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAC4ALAAAAAAQABAAAAaYQJdwSCwWQYdCIFA4gIyug2G1MqlEnGbxkCitWqtUCoVKHIYgA+n0aYFP8JPhGZWMRm336n4/uwwhgXl6gR0GQgYbih5ujSwbHQFCAA+VjI0flQQAQgEUn5ctHp8QE5JRDBERlx6qFxIDfiAIEhmMHg4OGRcTCHRRCxMeHhUYFhoTC35DBwgKEw0NEwoIy0RIAksCTlDdRUEAOw=="/>
+      <attribute name="help" value="bndrun-help.xml"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Banking Test"/>
+      <attribute name="category" value="SAP Omni Channel Banking"/>
+      <attribute name="dir" value="template/banking-bndrun"/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhDgASAMQAAMvp9cbk8+f5++z6/Mnm9NLu98Hf8Of4+sTh8d30+tfw+drz+vr+/uv6/OL3+s/s9sjm9OL2+tDt98Lg8b/Q2cPh8fr9/vL7/cDe8P3+/vf8/UM9M////wAAAAAAAAAAACH5BAAAAAAALAAAAAAOABIAAAVtYCaOJMlY1omuK6O9cBxfdG3bzTA0W+/3O8HhINhQjsgN0fFrUjYRR2LDqVo5xk0isaBeq9nFQuH9ZhWKQvmaLRQea6tP8gDEwYA8AHLHEv4QAU0/AYUBCBUViImMjAgGExOQkZSUBhiYmZqaIQA7"/>
       <attribute name="help" value="bndrun-help.xml"/>
     </capability>
   </resource>
