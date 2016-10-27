@@ -167,6 +167,8 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 # *********************************************************************************************************************
 -include: ${workspace}/cnf/config/framework.properties
 
+-runsystempackages.extra:  ${org.osgi.framework.system.packages}
+
 # Run properties for framework refer it from framework.properties
 runproperties.fwk: \
 	org.osgi.framework.bootdelegation=${org.osgi.framework.bootdelegation}, \
