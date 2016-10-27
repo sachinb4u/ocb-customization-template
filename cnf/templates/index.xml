@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1477545799910" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1477553231220" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="8.3.2.201610270523"/>
+      <attribute name="version" type="Version" value="8.3.2.201610270724"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="18fa7c616273a45e4f56dfd40ac02a90b03f384ead0fab518a4a937a25959b44"/>
+      <attribute name="osgi.content" value="119e2475894b937862faa1792728042e2f4d958e2da0791e92c9057f827ba0f1"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-8.3.2.jar"/>
-      <attribute name="size" type="Long" value="24465"/>
+      <attribute name="size" type="Long" value="8421"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201610270523"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201610270724"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201610270523"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201610270724"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
-      <attribute name="name" value="ExpenseManager Example"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Custom Transfer"/>
       <attribute name="category" value="SAP Omni Channel Banking"/>
-      <attribute name="dir" value="template/example"/>
+      <attribute name="dir" value="template/custom-transfer"/>
       <attribute name="icon" value="data:image/gif;base64,R0lGODlhDgASAMQAAMvp9cbk8+f5++z6/Mnm9NLu98Hf8Of4+sTh8d30+tfw+drz+vr+/uv6/OL3+s/s9sjm9OL2+tDt98Lg8b/Q2cPh8fr9/vL7/cDe8P3+/vf8/UM9M////wAAAAAAAAAAACH5BAAAAAAALAAAAAAOABIAAAVtYCaOJMlY1omuK6O9cBxfdG3bzTA0W+/3O8HhINhQjsgN0fFrUjYRR2LDqVo5xk0isaBeq9nFQuH9ZhWKQvmaLRQea6tP8gDEwYA8AHLHEv4QAU0/AYUBCBUViImMjAgGExOQkZSUBhiYmZqaIQA7"/>
       <attribute name="help" value="help.xml"/>
     </capability>
