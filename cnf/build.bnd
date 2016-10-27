@@ -30,7 +30,13 @@
 		name = OCB Release; \
 		pretty = true; \
 		local = ${build}/ocb
-		
+
+-plugin.6.OCB-Custom: \
+	aQute.bnd.deployer.repository.LocalIndexedRepo; \
+		name = OCB Custom; \
+		pretty = true; \
+		local = ${build}/ocb-custom
+				
 -releaserepo: Release
 -baselinerepo: Release
 
