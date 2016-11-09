@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1478605922973" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1478691852572" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="8.3.2.201611081151"/>
+      <attribute name="version" type="Version" value="8.3.2.201611091144"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="c7bbf986b5d79abc737d30683a6e7f607bbdb5a4dc2c13929faa9ccd526177a1"/>
+      <attribute name="osgi.content" value="1e05c769ea31acb9722ec11d5d476637d8b964ebc6a27c33be80dfdacf66b789"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-8.3.2.jar"/>
-      <attribute name="size" type="Long" value="9547"/>
+      <attribute name="size" type="Long" value="12593"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201611081151"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201611091144"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201611081151"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201611091144"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
@@ -35,8 +35,17 @@
       <attribute name="name" value="Provider Project"/>
       <attribute name="category" value="SAP Omni Channel Banking - Templates"/>
       <attribute name="dir" value="template/provider"/>
-      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQAPYAAElJSU5OTlFRUVNTU1hYWFtbW2FhYWJiYmRkZGlpaWtra21tbW5ubm9vb3l5eYCAgIGBgYKCgoODg4WFhYeHh4mJiYyMjI+Pj5ycnJ6enqCgoKGhoaOjo6Wlpaampqenp6ioqKqqqqysrLCwsLGxsbKysrW1tbe3t7m5ubq6ury8vL29vb6+vr+/v8DAwMHBwcLCwsPDw8TExMXFxcbGxsfHx8jIyMnJycrKysvLy8zMzM3Nzc7Ozs/Pz9HR0dLS0tTU1NXV1dbW1tjY2NnZ2dvb29zc3N3d3d7e3uLi4uTk5OXl5efn5+np6e3t7QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAE8AIf8LSW1hZ2VNYWdpY2sHZ2FtbWE9MQAsAAAAABAAEAAAB6CAT4KDTy8vhIiEL05MI4mCPjw8hUxGjiIeHoRGTkYvKj4+IyI8TCqKTD5GRqGsPC8OipGfGB6GnxWCry9GPCoRghWGPBURES+pkpqDIp88RgwqqS88joO2Iy8+CR4XHq88GIIXnyoJBAGCzdQvIiIq8B4MhCI+1JKSzvODKkYexp8YMPDgI9agCA0SPInwSmGBAAAeLVQxooBERAUIPAoEADs="/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQAHAAACH5BAEAAPwALAAAAAAQABAAhwAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAAAjBAPcJHLhv0yaCCAUuq1SmzKMym4olLFZpzcNHFR9pjDawocOKGdeITFRmX719xTaVsVgmI8RlHFUe3Mfw0ZovMx3RKLaMBosalQRuCrqPkgsdO4vViFHmC9B9y9S4oEGGDI1lSj2WoVFJjRcyXnSQcbFsmZeGXxpuokRVR9irxXaUIYN2kyYvNL56mVEsq0cya9tS3bnsBdqmm35R1UtgmUBKculugoOXhg5KHAfWU5llrQsymgTGUDZxmSbHA0kHBAA7"/>
       <attribute name="help" value="provider-help.xml"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="IntegrationTest Project"/>
+      <attribute name="category" value="SAP Omni Channel Banking - Templates"/>
+      <attribute name="dir" value="template/integration-test"/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBVZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDVmQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMrzDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2YrAGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaqM2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kAZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmAmZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9VM/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//VZv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAACH5BAEAAPwALAAAAAAQABAAAAifAPcJHEhQ0xg4BBMOROBAE44ACgmmybHvzT5NCCIKhOhAgIB9EAeGOnJHIIJoYxiCHNgBzqk7ocYEcACSWA6K+4yUTJMmAI59OdIgwDjwAkgEATSdGhggGkEOQANQ7MBUE8E7R/ZB23eEQyhlUmcSNNKha5xQZZ3uw4FT5EBiTTpYyBoyYgB6RzpQravwB8WSRDXuQ4AjU0+1gjUFHRgQADs="/>
+      <attribute name="help" value="integration-test-help.xml"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="bndrun"/>
