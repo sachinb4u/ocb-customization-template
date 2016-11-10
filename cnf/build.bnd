@@ -109,6 +109,19 @@ X-Validations: ${validationfiles}
 
 
 
+# ***************************************************************** 
+# Custom Headers for Dozer, EDM and Validation xmls
+# *****************************************************************
+dozerfiles: ${findpath;(.*)/dozer(.*).xml}
+edmfiles: ${findpath;(.*)/(.*)Edm.xml}
+validationfiles: ${findpath;(.*)/validation(.*).xml}
+
+X-Dozer: ${dozerfiles}
+X-EDM: ${edmfiles}
+X-Validations: ${validationfiles}
+
+
+
 
 # *********************************************************************************************************************
 # Change Bundle-Vendor value to your Company Name and remove ${warning} after updating name
