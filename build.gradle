@@ -7,6 +7,8 @@
 
 import aQute.bnd.build.Workspace
 import aQute.bnd.osgi.Constants
+import aQute.bnd.version.Version
+import aQute.bnd.service.RepositoryPlugin
 
 /* Add bnd gradle plugin as a script dependency */
 buildscript {
@@ -30,6 +32,133 @@ subprojects {
   def bndProject = bndWorkspace.getProject(name)
   if (bndProject != null) {
     plugins.apply 'biz.aQute.bnd'
+
+    tasks.addRule('Pattern: exportwar.<name>: Create WAR distribution of runbundles for <name>.bndrun file.') { taskName ->
+		  if (taskName.startsWith('exportwar.')) {
+			  def bndrun = taskName - 'exportwar.'
+			  def runFile = new File(projectDir, "${bndrun}.bndrun")
+			  def cnfProject = rootProject.project(bnd_cnf)
+
+			  if (runFile.isFile()) {
+				  task(taskName) {
+					  description "Export ${bndrun}.bndrun file to ${bndrun}.war "
+					  group 'Export WAR'
+
+					  def warDir =  new File(distsDir, "war")
+					  def warbundlesDir = new File(warDir, "${bndrun}")
+					  def webinfDir = new File(warbundlesDir, "WEB-INF")
+					  def webinfLibDir = new File(webinfDir, "lib")
+					  def osgiDir = new File(webinfDir, "osgi")
+					  def osgiBundlesDir = new File(osgiDir, "bundles")
+					  def osgiConfigDir = new File(osgiDir, "config")
+					  def bndrunWAR = new File(distsDir, "war/${bndrun}.war")
+
+					  outputs.dir warbundlesDir
+					  outputs.file bndrunWAR
+
+					  doFirst {
+						  project.mkdir(warbundlesDir)
+						  project.mkdir(webinfDir)
+						  project.mkdir(webinfLibDir)
+						  project.mkdir(osgiDir)
+						  project.mkdir(osgiBundlesDir)
+						  project.mkdir(osgiConfigDir)
+					  }
+
+					  doLast {
+                          logger.info 'Creating a distribution of the warbundles in {} in directory {}', runFile.absolutePath, warbundlesDir.absolutePath
+
+                          try {
+                              bndProject.exportRunbundles(relativePath(runFile.getName()), osgiBundlesDir)
+                          } catch (Exception e) {
+                              throw new GradleException("Creating a distribution of the warbundles in ${runFile.absolutePath} failed", e)
+                          }
+
+                          /* Delete servlet, jsp and jetty bundles */
+                          def tree = fileTree(osgiBundlesDir)
+                          tree.include 'javax.servlet.jsp*'
+                          tree.include 'javax.servlet*'
+                          tree.include 'org.apache.felix.http.jetty*'
+                          tree.each { it.delete() }
+
+                          copy {
+							  from new File(cnfProject.projectDir, "/config")
+							  into osgiDir
+							  include "framework.properties"
+							  include "system.properties"
+						  }
+
+						  copy {
+							  from new File(cnfProject.projectDir, "/config")
+							  into osgiConfigDir
+							  include "**/*.cfg"
+						  }
+
+                          def webLauncherBundle = null
+						  def fwkBundle = null
+						  def felixProxyBundle = null
+						  for(RepositoryPlugin repo : bndWorkspace.getRepositories()) {
+                              fwkBundle = repo.get("org.apache.felix.framework", new Version(5, 4, 0), null)
+                              felixProxyBundle = repo.get("org.apache.felix.http.proxy", new Version(3, 0, 3), null)
+                              webLauncherBundle = repo.get("com.sap.banking.web-launcher", new Version(8, 3, 2), null)
+                              
+							  if(fwkBundle != null) {
+								  copy {
+								  	from fwkBundle
+									into webinfLibDir
+							  	}
+							  }
+							  if(felixProxyBundle != null){
+								  copy {
+									  from felixProxyBundle
+									  into webinfLibDir
+								  }
+							  }
+                              if(webLauncherBundle != null){
+                                  copy {
+                                      from webLauncherBundle
+                                      into webinfLibDir
+                                  }
+                              }
+                              
+							  if(felixProxyBundle!= null && fwkBundle != null && webLauncherBundle != null){
+								  break;
+							  }
+						  }
+
+						  copy{
+							  from new File(cnfProject.projectDir , "/config")
+							  into webinfDir
+							  include "osgi-bridge-web.xml"
+							  rename "osgi-bridge-web.xml", "web.xml"
+						  }
+
+						  tasks.create (name: "${bndrun}.war", type: Zip) {
+							  extension 'war'
+							  from warbundlesDir
+                              destinationDir warDir
+							  archiveName "${bndrun}.war"
+							  include "*/**"
+						  }
+
+						  tasks["${bndrun}.war"].execute()
+
+					  }
+				  }
+			  }
+		  }
+    }
+
+    task('exportwar') {
+		  description 'Export all the bndrun files to WAR'
+		  group 'Export WAR'
+		  fileTree(projectDir) {
+			  include '*.bndrun'
+		  }.each {
+			  dependsOn tasks.getByPath("exportwar.${it.name - '.bndrun'}")
+		  }
+	  }
+
   }
 }
 
