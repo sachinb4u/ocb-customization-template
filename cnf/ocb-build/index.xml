@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1478606693476" name="OCB Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1479272173961" name="OCB Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="biz.aQute.junit"/>
@@ -342,9 +342,9 @@
       <attribute name="version" type="Version" value="1.3.0"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="6ba5fcc90fe9a588f7d70b47dc34a8d9dd02c45eea2dda34def30deb16070fb8"/>
+      <attribute name="osgi.content" value="b25bcdeb0cead09b5ac413340410995f8c173ca13a0e123e28dd668404ec738a"/>
       <attribute name="url" value="com.sap.banking.blueprint.plugin/com.sap.banking.blueprint.plugin-1.3.0.jar"/>
-      <attribute name="size" type="Long" value="19377"/>
+      <attribute name="size" type="Long" value="19316"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
@@ -387,19 +387,19 @@
       <directive name="filter" value="(osgi.wiring.package=aQute.bnd.component)"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.bnd.header)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.bnd.header)(version&gt;=1.5.0)(!(version&gt;=1.6.0)))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.bnd.osgi)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.bnd.osgi)(version&gt;=2.7.0)(!(version&gt;=2.8.0)))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.bnd.service)(version&gt;=4.1.0)(!(version&gt;=5.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.bnd.service)(version&gt;=4.2.0)(!(version&gt;=4.3.0)))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(osgi.wiring.package=aQute.lib.spring)"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.service.reporter)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=aQute.service.reporter)(version&gt;=1.0.1)(!(version&gt;=1.1.0)))"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(osgi.wiring.package=javax.xml.transform)"/>
