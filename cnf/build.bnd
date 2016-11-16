@@ -191,12 +191,11 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 -runsystempackages.extra:  ${org.osgi.framework.system.packages}
 
 # Run properties for framework refer it from framework.properties
-runproperties.fwk: \
-	org.osgi.framework.bootdelegation=${org.osgi.framework.bootdelegation}, \
-	org.osgi.framework.system.packages=${org.osgi.framework.system.packages},\
+-runproperties.fwk: \
+	org.osgi.framework.bootdelegation="${org.osgi.framework.bootdelegation}", \
 	felix.log.level=${felix.log.level}
 	
-
+-runpath.dbdrivers: com.ibm.db2.jcc
 
 	
 # *********************************************************************************************************************
@@ -204,10 +203,12 @@ runproperties.fwk: \
 # *********************************************************************************************************************
 -runvm.blueprint: \
 				-Dorg.eclipse.gemini.blueprint.extender.internal.boot.ChainActivator.disableBlueprint=true
+				-Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl
+				-Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
 
 -runvm.options: \
-				-Xms128m \
-				-Xmx1024m
+				-Xms256m \
+				-Xmx2048m
 
 # default log cofigurations
 -runvm.logging: \
@@ -239,8 +240,9 @@ runproperties.fwk: \
 	capability:="osgi.service; objectClass=org.osgi.service.cm.ConfigurationAdmin"
 	
 -augment.blueprint_extender:\
-	org.eclipse.gemini.blueprint.extender; \
-	capability:="osgi.extender; osgi.extender=osgi.blueprint; version=1.0.0"
+	org.eclipse.gemini.blueprint.extender; version="1.0.2"; \
+	capability:="osgi.extender; osgi.extender=osgi.blueprint; version=1.0.0";\
+	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.blueprint-extender-fragment)(version>=8.3.2))'"
 
 # Servlet API provides JavaServlet contract
 -augment.servlet: \
@@ -281,7 +283,12 @@ runproperties.fwk: \
 	org.apache.felix.http.whiteboard; version="3.0.1"; \
 	requirement:="osgi.identity; filter:='(&(osgi.identity=org.apache.felix.scr)(version>=2.0.2))'"
 	
-	
+# alertsengine uses jaxws client namespace 
+-augment.alertsengine_jaxws:\
+	com.sap.banking.alertsengine; version="8.3.2"; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=org.apache.cxf.cxf-rt-frontend-jaxws)(version>=2.7.13.sap-01))'"
+
+
 -tester: biz.aQute.junit
 
 -runproperties.test: \
