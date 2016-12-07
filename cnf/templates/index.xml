@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1479968946369" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1481092265243" name="Templates" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="8.3.2.201611240628"/>
+      <attribute name="version" type="Version" value="8.3.2.201612070630"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="d81aa4872f9c1cafcb64c63de41a21af0974bdc3f91c6edcc5b1a281a3a223fd"/>
+      <attribute name="osgi.content" value="5fc8925faddf0c711b7232b06960bce17ad024a94d8f27a6b0146136d417c655"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-8.3.2.jar"/>
-      <attribute name="size" type="Long" value="13007"/>
+      <attribute name="size" type="Long" value="13040"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201611240628"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201612070630"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201611240628"/>
+      <attribute name="bundle-version" type="Version" value="8.3.2.201612070630"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
