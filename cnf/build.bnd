@@ -1,11 +1,12 @@
 # *********************************************************************************************************************
 # Configure OSGi Bundle Repositories (OBR)
 # *********************************************************************************************************************
--plugin.1.Local: \
+
+-plugin.1.OCB-Build: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
-		name = Local; \
+		name = Build; \
 		pretty = true; \
-		local = ${build}/local
+		local = ${build}/build-repo
 
 -plugin.2.Release: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
@@ -13,41 +14,29 @@
 		pretty = true; \
 		local = ${build}/release
 
--plugin.3.Templates: \
-	aQute.bnd.deployer.repository.LocalIndexedRepo; \
-		name = Templates; \
-		pretty = true; \
-		local = ${build}/templates
-
--plugin.4.OCB-Build: \
-	aQute.bnd.deployer.repository.LocalIndexedRepo; \
-		name = OCB Build; \
-		pretty = true; \
-		local = ${build}/ocb-build
-		
--plugin.5.OCB: \
+-plugin.3.OCB: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
 		name = OCB Release; \
 		pretty = true; \
-		local = ${build}/ocb
+		local = ${build}/ocb-release-repo
 
--plugin.6.OCB-Custom: \
+-plugin.4.dependencies: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
-		name = OCB Custom; \
+		name = Dependencies; \
 		pretty = true; \
-		local = ${build}/ocb-custom
+		local = ${build}/thirdparty-repo
 				
 -releaserepo: Release
 -baselinerepo: Release
 
-
+-baseline: *
 
 
 # *********************************************************************************************************************
 # defines value for SNAPSHOT, if SNAPSHOT is added in Bundle-Version, it will be replaced by below defined value 
 #	i.e. timestamp. eg. 8.3.2.SNAPSHOT will be converted to 8.3.2-201610260636
 # *********************************************************************************************************************
--snapshot: ${tstamp}
+-snapshot: v${tstamp}
 
 
 # *********************************************************************************************************************
@@ -61,19 +50,17 @@ Bundle-Blueprint: ${blueprintfiles}
 
 
 
-
 # ********************************************************************************************************************* 
 # Custom Headers for Dozer, EDM and Validation xmls
 # Search for Dozer, EDM and Validation files and add Custom Headers in Manifest
 # *********************************************************************************************************************
-dozerfiles: ${findpath;dozer(.*).xml}
-edmfiles: ${findpath;(.*)Edm.xml}
-validationfiles: ${findpath;validation(.*).xml}
+dozerfiles: ${findpath;(.*)/dozer(.*).xml}
+edmfiles: ${findpath;(.*)/(.*)Edm.xml}
+validationfiles: ${findpath;(.*)/validation(.*).xml}
 
 X-Dozer: ${dozerfiles}
 X-EDM: ${edmfiles}
 X-Validations: ${validationfiles}
-
 
 
 
@@ -95,7 +82,7 @@ X-Validations: ${validationfiles}
 #	ValidationsAnalyzerPlugin - refers X-Validations manifest header containing validation xml paths in bundle and  
 #								adds imports for all referred packages
 # *********************************************************************************************************************
--pluginpath: ${workspace}/cnf/ocb-build/com.sap.banking.blueprint.plugin/com.sap.banking.blueprint.plugin-1.3.0.jar
+-pluginpath: ${workspace}/cnf/build-repo/com.sap.banking.blueprint.plugin/com.sap.banking.blueprint.plugin-1.3.0.jar
 
 -plugin.blueprint : aQute.lib.spring.SpringXMLType
 
@@ -109,19 +96,6 @@ X-Validations: ${validationfiles}
 
 
 
-# ***************************************************************** 
-# Custom Headers for Dozer, EDM and Validation xmls
-# *****************************************************************
-dozerfiles: ${findpath;(.*)/dozer(.*).xml}
-edmfiles: ${findpath;(.*)/(.*)Edm.xml}
-validationfiles: ${findpath;(.*)/validation(.*).xml}
-
-X-Dozer: ${dozerfiles}
-X-EDM: ${edmfiles}
-X-Validations: ${validationfiles}
-
-
-
 
 # *********************************************************************************************************************
 # Change Bundle-Vendor value to your Company Name and remove ${warning} after updating name
@@ -130,20 +104,13 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 
 
 
-
 # *********************************************************************************************************************
 ## Bnd Project Source/Binary Options
 # *********************************************************************************************************************
 -sources:              false								# should include source files in jar?
-#-sourcepath:           ${project}/src/main/java				# source directory 
-#src=src/main/java
-#bin=target/classes
-#testsrc=src/test/java
-#testbin=target/test-classes
-#target-dir=target
-#include src/main/resource if any files present
--includeresource.maven: ${if;${isdir;${project}/resources};resources;} 
 
+#include resources if any files present
+-includeresource.maven: ${if;${isdir;${project}/resources};resources;} 
 
 
 
@@ -157,10 +124,10 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 -runkeep: false 	
 
 # storage directory for osgi framework while running
--runstorage: generated/osgi-fw-storage
+-runstorage: generated/osgi-framework-storage
 
+# run execution environment
 -runee: JavaSE-1.8
-
 
 
 
@@ -175,7 +142,6 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 	org.apache.servicemix.bundles.junit; version=4.11,\
 	org.mockito.mockito-core;version=1.9.5,\
 	org.objenesis;version=2.1.0
-
 
 
 
@@ -195,7 +161,14 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 	org.osgi.framework.bootdelegation="${org.osgi.framework.bootdelegation}", \
 	felix.log.level=${felix.log.level}
 	
--runpath.dbdrivers: com.ibm.db2.jcc
+
+
+# *********************************************************************************************************************
+# Database Drivers : Drop JDBC driver jar to cnf/db-drivers and add it to run path
+# *********************************************************************************************************************
+-runpath.dbdrivers: \
+		${build}/db-drivers/db2-jcc4.jar; version=file
+		
 
 	
 # *********************************************************************************************************************
@@ -208,14 +181,14 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 
 -runvm.options: \
 				-Xms256m \
-				-Xmx2048m
+				-Xmx1024m
 
-# default log cofigurations
+# default logback cofigurations
 -runvm.logging: \
 				-Dlogback.configurationFile=${workspace}/cnf/config/logback.xml
 
 -runvm.web:\
-	-Dorg.osgi.service.http.port=8888	
+		-Dorg.osgi.service.http.port=8888	
 	
 	
 
@@ -229,7 +202,6 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 
 
 
-
 # ********************************************************************************************************************* 
 # Add capability/requirement to bundle for resolution, below capability/requirement assigned will be used 
 #	while resolving.
@@ -239,11 +211,6 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 	org.eclipse.equinox.cm; \
 	capability:="osgi.service; objectClass=org.osgi.service.cm.ConfigurationAdmin"
 	
--augment.blueprint_extender:\
-	org.eclipse.gemini.blueprint.extender; version="1.0.2"; \
-	capability:="osgi.extender; osgi.extender=osgi.blueprint; version=1.0.0";\
-	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.blueprint-extender-fragment)(version>=8.3.2))'"
-
 # Servlet API provides JavaServlet contract
 -augment.servlet: \
 	javax.servlet; version="3.0.0"; \
@@ -287,6 +254,22 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 -augment.alertsengine_jaxws:\
 	com.sap.banking.alertsengine; version="8.3.2"; \
 	requirement:="osgi.identity; filter:='(&(osgi.identity=org.apache.cxf.cxf-rt-frontend-jaxws)(version>=2.7.13.sap-01))'"
+
+# bas-connector capabilities 
+-augment.bas_connector:\
+	com.sap.banking.bas-connector; \
+	capability:="osgi.service; objectClass=com.sap.xi.fs_orb.global.OnlineBankingPaymentProcessingPaymentTransactionOrderEventIn, \
+		osgi.service; objectClass=com.sap.xi.fs_orb.global.OnlineBankingPaymentProcessingPaymentTransactionOrderIn,\
+		osgi.service; objectClass=com.sap.banking.basconnector.account.interfaces.BaSAccountConnector,\
+		osgi.service; objectClass=com.sap.banking.basconnector.billpayment.interfaces.BaSBillPaymentConnector,\
+		osgi.service; objectClass=com.sap.banking.basconnector.transfer.interfaces.BaSExternalTransferConnector,\
+		osgi.service; objectClass=com.sap.banking.basconnector.user.interfaces.BaSUserConnector,\
+		osgi.service; objectClass=com.sap.banking.basconnector.util.interfaces.BaSUtil,\
+		osgi.service; objectClass=com.sap.banking.basconnector.transfer.interfaces.BaSInternalTransferConnector"
+
+-augment.event_admin:\
+	org.apache.felix.aventadmin; version="1.4.8"; \
+	capability:="osgi.service; objectClass=org.osgi.service.event.EventAdmin"		
 
 
 -tester: biz.aQute.junit

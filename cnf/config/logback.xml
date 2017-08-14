@@ -30,7 +30,7 @@
     <logger name="org.apache.felix" level="WARN">
         <appender-ref ref="file" />
     </logger>
-    <logger name="org.eclipse.gemini.blueprint.extender.internal.activator" level="INFO">
+    <logger name="org.eclipse.gemini.blueprint.extender.internal.activator" level="WARN">
         <appender-ref ref="file" />
     </logger>
     <logger name="org.eclipse.gemini.blueprint.extender.internal.blueprint.activator" level="WARN">
@@ -45,10 +45,10 @@
     <logger name="com.hazelcast" level="WARN">
         <appender-ref ref="file" />
     </logger>    
-    <logger name="com.sap.banking" level="DEBUG">
+    <logger name="com.sap.banking" level="INFO">
         <appender-ref ref="file" />
     </logger>
-    <logger name="com.ffusion" level="DEBUG">
+    <logger name="com.ffusion" level="INFO">
         <appender-ref ref="file" />
     </logger>
 
