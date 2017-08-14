@@ -239,11 +239,11 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 # org.eclipse.virgo.medic.log.logback package import 
 -augment.logback_classic:\
 	ch.qos.logback.classic; version="1.0.7"; \
-	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.logback-classic-fragment)(version>=8.3.2))'"
+	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.logback-classic-fragment)(version>=1.0))'"
 	
 -augment.logback_core:\
 	ch.qos.logback.core; version="1.0.7"; \
-	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.logback-core-fragment)(version>=8.3.2))'"
+	requirement:="osgi.identity; filter:='(&(osgi.identity=com.sap.banking.logback-core-fragment)(version>=1.0))'"
 
 # felix scr bundle is required to run declarative dervices components in felix whiteboard and webconsole
 -augment.felix_scr:\
