@@ -24,7 +24,7 @@
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
 		name = Dependencies; \
 		pretty = true; \
-		local = ${build}/thirdparty-repo
+		local = ${build}/dependencies-repo
 				
 -releaserepo: Release
 -baselinerepo: Release
