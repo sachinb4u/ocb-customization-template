@@ -167,7 +167,8 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 # Database Drivers : Drop JDBC driver jar to cnf/db-drivers and add it to run path
 # *********************************************************************************************************************
 -runpath.dbdrivers: \
-		${build}/db-drivers/db2jcc4.jar; version=file
+		${build}/db-drivers/db2jcc4.jar; version=file,\
+		${build}/db-drivers/com.sybase.jdbc4-16.0.5.jar; version=file
 		
 
 	
