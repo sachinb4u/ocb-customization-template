@@ -159,6 +159,67 @@ subprojects {
 		  }
 	  }
 
+	tasks.addRule('Pattern: exportdockerimage.<name>: Create DockerImage distribution of executable JAR for <name>.bndrun file.') { taskName ->
+		if (taskName.startsWith('exportdockerimage.')) {
+		  def bndrun = taskName - 'exportdockerimage.'
+		  def runFile = new File(projectDir, "${bndrun}.bndrun")
+		  def cnfProject = rootProject.project(bnd_cnf)
+
+          def dockerSourceDir = new File(cnfProject.projectDir, "/docker")
+		  def bndrunExecutableJar = new File(distsDir, "executable/${bndrun}.jar")
+		  def dockerImagesDir = new File(distsDir, 'docker')
+		  def dockerImageWorkDir = new File(dockerImagesDir, bndrun)
+
+		  if (runFile.isFile()) {
+
+			  task(taskName) {
+				  dependsOn tasks.getByName('export.' + bndrun)
+
+				  description "Export ${bndrun}.bndrun file as ocb/${bndrun} DockerImage"
+				  group 'Export DockerImage'
+
+				  doFirst{
+					  project.mkdir(dockerImagesDir)
+					  project.mkdir(dockerImageWorkDir)
+				  }
+
+				  doLast{
+					  /* copy executable to docker work directory */
+					  copy {
+						  from bndrunExecutableJar
+						  into dockerImageWorkDir
+					  }
+
+					  /* copy dockerfile and configurations from docker work directory */
+					  copy {
+						  from dockerSourceDir
+						  into dockerImageWorkDir
+						  include '**/*'
+					  }
+
+					  tasks.create(name : "dockerbuild.${bndrun}", type:Exec){
+						  workingDir dockerImageWorkDir
+						  commandLine "docker", 'build', '-t', 'ocb/' + bndrun, '.', '--no-cache'
+					  }
+
+					  tasks["dockerbuild.${bndrun}"].execute()
+				  }
+			  }// end of task
+		  }
+		}
+	  }
+
+	task('exportdockerimages') {
+	  description 'Export all the bndrun files as DockerImage'
+	  group 'Export DockerImage'
+	  fileTree(projectDir) {
+		  include '*.bndrun'
+	  }.each {
+		  dependsOn tasks.getByPath("exportdockerimage.${it.name - '.bndrun'}")
+	  }
+	}
+
+
   }
 }
 
