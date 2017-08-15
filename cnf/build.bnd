@@ -271,6 +271,18 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 	org.apache.felix.aventadmin; version="1.4.8"; \
 	capability:="osgi.service; objectClass=org.osgi.service.event.EventAdmin"		
 
+-augment.jpa:\
+	org.eclipse.persistence.jpa; \
+	requirement:="osgi.wiring.package; filter:='(osgi.wiring.package=org.eclipse.persistence.jpa.jpql.parser)'"
+
+-augment.javax-mail:\
+	javax.mail; version=1.4.7; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=org.apache.commons.email)(version>=1.4.0))'"\
+	   
+-augment.jackson:\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider; version=2.7.4; \
+	requirement:="osgi.identity; filter:='(&(osgi.identity=com.fasterxml.jackson.module.jackson-module-jaxb-annotations)(version>=2.7.4))'" 	
+
 
 -tester: biz.aQute.junit
 
