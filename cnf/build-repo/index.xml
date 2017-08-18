@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1502908365602" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1503050021995" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.blueprint.plugin"/>
@@ -80,21 +80,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="8.3.2.201612070630"/>
+      <attribute name="version" type="Version" value="1.0.0.v201708180952"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="5fc8925faddf0c711b7232b06960bce17ad024a94d8f27a6b0146136d417c655"/>
-      <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-8.3.2.jar"/>
-      <attribute name="size" type="Long" value="13040"/>
+      <attribute name="osgi.content" value="81950baff4d05bbf1c73d7ec8237941c2dd0397d5f9b70c976d44d579bf3fdcd"/>
+      <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-1.0.0.jar"/>
+      <attribute name="size" type="Long" value="13444"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201612070630"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708180952"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="8.3.2.201612070630"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708180952"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
