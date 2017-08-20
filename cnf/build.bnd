@@ -168,7 +168,7 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 # *********************************************************************************************************************
 -runpath.dbdrivers: \
 		${build}/db-drivers/db2jcc4.jar; version=file,\
-		${build}/db-drivers/com.sybase.jdbc4-16.0.5.jar; version=file
+		${build}/db-drivers/jconn4.jar; version=file
 		
 
 	
