@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1503050021995" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1503247165242" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.blueprint.plugin"/>
@@ -80,21 +80,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.v201708180952"/>
+      <attribute name="version" type="Version" value="1.0.0.v201708201639"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="81950baff4d05bbf1c73d7ec8237941c2dd0397d5f9b70c976d44d579bf3fdcd"/>
+      <attribute name="osgi.content" value="ee47a45c38dbc4a54cd507c30155496d64ded110ed1879695cb77f5652647a91"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="13444"/>
+      <attribute name="size" type="Long" value="19856"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708180952"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708201639"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708180952"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708201639"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
@@ -131,6 +131,15 @@
       <attribute name="dir" value="template/launcher"/>
       <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQANUAACCAQSaAQSaIQUGRV16abzqITzOISGatdy2IQUiRV0iaVzqRSEGRT2atbzqIQTN3OkGISEiRT0+aV1ekXi2AMzOIOkGaSEiaTzqIOkGRQVekV0iASGakZnetd63LrbrSutXg1V6aV4i3gG+kXoCtb4i3d5rBiIi3b5G3d5G3b6TBiIDMJsLpeP///////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAC4ALAAAAAAQABAAAAaYQJdwSCwWQYdCIFA4gIyug2G1MqlEnGbxkCitWqtUCoVKHIYgA+n0aYFP8JPhGZWMRm336n4/uwwhgXl6gR0GQgYbih5ujSwbHQFCAA+VjI0flQQAQgEUn5ctHp8QE5JRDBERlx6qFxIDfiAIEhmMHg4OGRcTCHRRCxMeHhUYFhoTC35DBwgKEw0NEwoIy0RIAksCTlDdRUEAOw=="/>
       <attribute name="help" value="launcher-help.xml"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="RESTful Service Project"/>
+      <attribute name="category" value="SAP Omni Channel Banking - Templates"/>
+      <attribute name="dir" value="template/rest"/>
+      <attribute name="icon" value="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADU0lEQVR42mWTX2hTZxjGn+/kJCdp4kl6TnKaVE2LjV1TTXSsoriuRUSpEwalqOCGsIuxddBZ5nDowAunq2wrY67bLjYvCssUL9wUnV21UKmKuIuUimnV9b/NOPnb5l9Pc05ydhak69b35uP7eJ8fH8/7PgT/qy+vPjBt99cfC4bT+yWFrolktUdZHucY6sZmc6z7jdf8iyv7ycrLT3NqRwuP8xefpmExGlEsFjAvAc+T2pmU8Iqgw5FXbUdZQs6vApwOqV+VFzKde1wUJhU9iKoim1fhpAvYIpTBTAPtfRmkEylcOFz5tZGQzmXA8Qfq65xBvtFgX8LutQwUosd8NodISgJn1GPg+RLe9FnR8zCDwOMi3vcq+FUU9l9ppX4rAT4YLC74K5bYCisFOy1jh8P84l9FXHs2j+0Cg+8fy1BkgidxFddDMp69y6TWC1Yr2fNZf8PmnU1/vCQUsdaiA6svoMlpegFQ8WeGwGMBcrkMTt6XMZciGJxQ0Ggvopkf30b2/Tj9YW011+1xaGJNt5Wn4ef0y8aGxp6ivq4Wo6NjmFEsOBU0wWNSMCoC772cO0Z2/RA556lkPq7mdeDMFCoMebTWWkvicDiMgdu3wFe6wZYxsAsumMsFrMcUyAmCux30ObLt29mTVQ7LWbcG4C0U9DTBYbcMJ8tgYjaM/v5+NO7cgXqvFxMT4wjPTEGkHPhmjMOYajpBPKeGWlxVvptuTi0BrEYCSRtOS24Ik1PTKLcLqNlQjcvXbmJTXR0cNguWFhfhq9Ygl/o6SlOo/S6rOhkJdpaANQImowGiGEbDwn1scloQTSSga3wHs7EEqp5cAcfbcHkScl/3R3wJUBFQPzGJyTOcZs6aMh0oA41mOoQD7jym41nE43G8dagNj0ZGICbTiMVikNILuDV45+3lTTR9PjNs1PFbzGoGRFsenxREMxmBz++Hk7MhlU7Dq/nwD6y3tzdhs9l0gUDgwH+ygM7fg9i4dyuVTKKoFLQQFZA9msfcXxEwaziERRHRaFTLlpxua2tjV4WpVHVNHTjYfRwbG9ZBC1CP9Rf8nHThi10uPLo3EDx95mxPe3v7p11dXe5cLldYDfi3BLD2GuQpQIqEfPXeIzoDEx0eHr60sulv9PBCZPZ1BIoAAAAASUVORK5CYII="/>
+      <attribute name="help" value="rest-help.xml"/>
     </capability>
   </resource>
   <resource>
