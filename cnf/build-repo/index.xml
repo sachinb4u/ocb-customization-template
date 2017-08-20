@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1503259358302" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1503268712028" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.blueprint.plugin"/>
@@ -80,21 +80,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.v201708202002"/>
+      <attribute name="version" type="Version" value="1.0.0.v201708202238"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="b5338c37a306bcd2c7817e3467b8ac4d9d3833fdfedd689239259f15bed4c478"/>
+      <attribute name="osgi.content" value="5345d13af60ddf0a4aa38d9c14e1f3de2187040d43580f239f5ce2aec0e789e6"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="19893"/>
+      <attribute name="size" type="Long" value="19885"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708202002"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708202238"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708202002"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708202238"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
@@ -326,6 +326,36 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="json"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="20160212.0.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="0aaf0e7e286ece88fb60b9ba14dd45c05a48e55618876efb7d1b6f19c25e7a29"/>
+      <attribute name="url" value="json/json-20160212.0.0.jar"/>
+      <attribute name="size" type="Long" value="49176"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="json"/>
+      <attribute name="bundle-version" type="Version" value="20160212.0.0"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="json"/>
+      <attribute name="bundle-version" type="Version" value="20160212.0.0"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.json"/>
+      <attribute name="version" type="Version" value="20160212.0.0"/>
+      <attribute name="bundle-symbolic-name" value="json"/>
+      <attribute name="bundle-version" type="Version" value="20160212.0.0"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.6))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="org.amdatu.testing.configurator"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" type="Version" value="4.0.1"/>
@@ -368,6 +398,72 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="org.apache.commons.fileupload"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="1.3.2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="287d0b5ba8ac6437ee5d7f5567cb68327b6c52957c1d8292e25ecd25e04b25f5"/>
+      <attribute name="url" value="org.apache.commons.fileupload/org.apache.commons.fileupload-1.3.2.jar"/>
+      <attribute name="size" type="Long" value="70282"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="org.apache.commons.fileupload"/>
+      <attribute name="bundle-version" type="Version" value="1.3.2"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="org.apache.commons.fileupload"/>
+      <attribute name="bundle-version" type="Version" value="1.3.2"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.commons.fileupload"/>
+      <attribute name="version" type="Version" value="1.3.2"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.commons.fileupload"/>
+      <attribute name="bundle-version" type="Version" value="1.3.2"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.commons.fileupload.disk"/>
+      <attribute name="version" type="Version" value="1.3.2"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.commons.fileupload"/>
+      <attribute name="bundle-version" type="Version" value="1.3.2"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.commons.fileupload.portlet"/>
+      <attribute name="version" type="Version" value="1.3.2"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.commons.fileupload"/>
+      <attribute name="bundle-version" type="Version" value="1.3.2"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.commons.fileupload.servlet"/>
+      <attribute name="version" type="Version" value="1.3.2"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.commons.fileupload"/>
+      <attribute name="bundle-version" type="Version" value="1.3.2"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.commons.fileupload.util"/>
+      <attribute name="version" type="Version" value="1.3.2"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.commons.fileupload"/>
+      <attribute name="bundle-version" type="Version" value="1.3.2"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.servlet)"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.servlet.http)"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.apache.commons.io)"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.apache.commons.io.output)"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.5))"/>
     </requirement>
   </resource>
   <resource>
@@ -1689,6 +1785,90 @@
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="org.apache.felix.webconsole"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="4.2.16"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="dd2927c72fb5b259dc83c61970207594c48f8db7ed135b7d43768b34d2756995"/>
+      <attribute name="url" value="org.apache.felix.webconsole/org.apache.felix.webconsole-4.2.16.jar"/>
+      <attribute name="size" type="Long" value="462678"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="org.apache.felix.webconsole"/>
+      <attribute name="bundle-version" type="Version" value="4.2.16"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="org.apache.felix.webconsole"/>
+      <attribute name="bundle-version" type="Version" value="4.2.16"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.felix.webconsole"/>
+      <attribute name="version" type="Version" value="3.2.0"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.felix.webconsole"/>
+      <attribute name="bundle-version" type="Version" value="4.2.16"/>
+      <directive name="uses" value="javax.servlet.http,javax.servlet,org.osgi.framework,org.apache.commons.io,org.osgi.util.tracker,org.apache.commons.fileupload.disk,org.apache.commons.fileupload,org.apache.commons.fileupload.servlet,org.json"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.felix.webconsole.bundleinfo"/>
+      <attribute name="version" type="Version" value="1.0.0"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.felix.webconsole"/>
+      <attribute name="bundle-version" type="Version" value="4.2.16"/>
+      <directive name="uses" value="org.osgi.framework"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.felix.webconsole.i18n"/>
+      <attribute name="version" type="Version" value="1.0.0"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.felix.webconsole"/>
+      <attribute name="bundle-version" type="Version" value="4.2.16"/>
+      <directive name="uses" value="org.osgi.framework"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=2.4.0)(!(version&gt;=4.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=2.4.0)(!(version&gt;=4.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.fileupload)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.fileupload.disk)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.fileupload.servlet)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.io)(version&gt;=1.4.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.felix.webconsole)(version&gt;=3.2.0)(!(version&gt;=3.3.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.felix.webconsole.bundleinfo)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.json)(version&gt;=0.0.0))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.6.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.http)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.packageadmin)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.startlevel)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
     </requirement>
   </resource>
   <resource>

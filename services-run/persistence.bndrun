@@ -78,8 +78,8 @@
 	org.springframework.jdbc;version='[3.2.14,3.2.15)',\
 	org.springframework.orm;version='[3.2.14,3.2.15)',\
 	org.springframework.tx;version='[3.2.14,3.2.15)',\
-	osgi.cmpn;version='[5.0.0,5.0.1)',\
 	stax2-api;version='[3.1.4,3.1.5)',\
 	woodstox-core-asl;version='[4.4.1,4.4.2)',\
 	org.eclipse.persistence.jpa.jpql;version='[2.5.2,2.5.3)',\
-	org.apache.commons.email;version='[1.4.0,1.4.1)'
+	org.apache.commons.email;version='[1.4.0,1.4.1)',\
+	org.apache.aries.blueprint.api;version='[1.0.0,1.0.1)'
