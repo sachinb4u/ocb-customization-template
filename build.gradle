@@ -100,7 +100,7 @@ subprojects {
 						  for(RepositoryPlugin repo : bndWorkspace.getRepositories()) {
                               fwkBundle = repo.get("org.apache.felix.framework", new Version(5, 4, 0), null)
                               felixProxyBundle = repo.get("org.apache.felix.http.proxy", new Version(3, 0, 3), null)
-                              webLauncherBundle = repo.get("com.sap.banking.web-launcher", new Version(8, 3, 2), null)
+                              webLauncherBundle = repo.get("com.sap.banking.web-launcher", new Version(1, 0, 1), null)
                               
 							  if(fwkBundle != null) {
 								  copy {

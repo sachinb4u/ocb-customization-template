@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1503344584114" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1503355492834" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.blueprint.plugin"/>
@@ -80,21 +80,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.v201708211942"/>
+      <attribute name="version" type="Version" value="1.0.0.v201708212244"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="f4de174ed1336f3b35deb089078706eb556d5aff335b393b2cdc4e5cca4b0d26"/>
+      <attribute name="osgi.content" value="430bc503dc70619e1adf5af3a331e5c3a0b1ca53fb515a9fdeedf94a4bbab95a"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="20605"/>
+      <attribute name="size" type="Long" value="20368"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708211942"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708212244"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708211942"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708212244"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
@@ -141,6 +141,50 @@
       <attribute name="icon" value="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADU0lEQVR42mWTX2hTZxjGn+/kJCdp4kl6TnKaVE2LjV1TTXSsoriuRUSpEwalqOCGsIuxddBZ5nDowAunq2wrY67bLjYvCssUL9wUnV21UKmKuIuUimnV9b/NOPnb5l9Pc05ydhak69b35uP7eJ8fH8/7PgT/qy+vPjBt99cfC4bT+yWFrolktUdZHucY6sZmc6z7jdf8iyv7ycrLT3NqRwuP8xefpmExGlEsFjAvAc+T2pmU8Iqgw5FXbUdZQs6vApwOqV+VFzKde1wUJhU9iKoim1fhpAvYIpTBTAPtfRmkEylcOFz5tZGQzmXA8Qfq65xBvtFgX8LutQwUosd8NodISgJn1GPg+RLe9FnR8zCDwOMi3vcq+FUU9l9ppX4rAT4YLC74K5bYCisFOy1jh8P84l9FXHs2j+0Cg+8fy1BkgidxFddDMp69y6TWC1Yr2fNZf8PmnU1/vCQUsdaiA6svoMlpegFQ8WeGwGMBcrkMTt6XMZciGJxQ0Ggvopkf30b2/Tj9YW011+1xaGJNt5Wn4ef0y8aGxp6ivq4Wo6NjmFEsOBU0wWNSMCoC772cO0Z2/RA556lkPq7mdeDMFCoMebTWWkvicDiMgdu3wFe6wZYxsAsumMsFrMcUyAmCux30ObLt29mTVQ7LWbcG4C0U9DTBYbcMJ8tgYjaM/v5+NO7cgXqvFxMT4wjPTEGkHPhmjMOYajpBPKeGWlxVvptuTi0BrEYCSRtOS24Ik1PTKLcLqNlQjcvXbmJTXR0cNguWFhfhq9Ygl/o6SlOo/S6rOhkJdpaANQImowGiGEbDwn1scloQTSSga3wHs7EEqp5cAcfbcHkScl/3R3wJUBFQPzGJyTOcZs6aMh0oA41mOoQD7jym41nE43G8dagNj0ZGICbTiMVikNILuDV45+3lTTR9PjNs1PFbzGoGRFsenxREMxmBz++Hk7MhlU7Dq/nwD6y3tzdhs9l0gUDgwH+ygM7fg9i4dyuVTKKoFLQQFZA9msfcXxEwaziERRHRaFTLlpxua2tjV4WpVHVNHTjYfRwbG9ZBC1CP9Rf8nHThi10uPLo3EDx95mxPe3v7p11dXe5cLldYDfi3BLD2GuQpQIqEfPXeIzoDEx0eHr60sulv9PBCZPZ1BIoAAAAASUVORK5CYII="/>
       <attribute name="help" value="rest-help.xml"/>
     </capability>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.sap.banking.web-launcher"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="1.0.1.v201708180854"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="9bda28594c2a944cba503acde57d4417e10d1c016500bffbf78819855104b120"/>
+      <attribute name="url" value="com.sap.banking.web-launcher/com.sap.banking.web-launcher-1.0.1.jar"/>
+      <attribute name="size" type="Long" value="23032"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.sap.banking.web-launcher"/>
+      <attribute name="bundle-version" type="Version" value="1.0.1.v201708180854"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.sap.banking.web-launcher"/>
+      <attribute name="bundle-version" type="Version" value="1.0.1.v201708180854"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.jsp)(version&gt;=2.2.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.apache.felix.framework)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.launch)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.7))"/>
+    </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
@@ -1672,6 +1716,58 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.7))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="org.apache.felix.http.proxy"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="3.0.3.SAP"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="0a45d458cb3e54e09b9ca42a867b3ec31cf7dab8e9cf5d1bfe7eea85f83d9bab"/>
+      <attribute name="url" value="org.apache.felix.http.proxy/org.apache.felix.http.proxy-3.0.3.jar"/>
+      <attribute name="size" type="Long" value="24812"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="org.apache.felix.http.proxy"/>
+      <attribute name="bundle-version" type="Version" value="3.0.3.SAP"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="org.apache.felix.http.proxy"/>
+      <attribute name="bundle-version" type="Version" value="3.0.3.SAP"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="org.apache.felix.http.proxy"/>
+      <attribute name="version" type="Version" value="3.0.0"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.felix.http.proxy"/>
+      <attribute name="bundle-version" type="Version" value="3.0.3.SAP"/>
+      <directive name="uses" value="javax.servlet,javax.servlet.http,org.osgi.framework,org.osgi.util.tracker"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.annotation)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.descriptor)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.6))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.6))"/>
     </requirement>
   </resource>
   <resource>
