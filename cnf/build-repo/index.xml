@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1503459632443" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1503488908129" name="Build" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.blueprint.plugin"/>
@@ -80,21 +80,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="com.sap.banking.templates"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.v201708230340"/>
+      <attribute name="version" type="Version" value="1.0.0.v201708231148"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="f6ea9ef5094b27a4a7bbae59add758058c1956b723023eca05af938c01b23000"/>
+      <attribute name="osgi.content" value="3dd650617cdfc155b6b22a5ac753b7546c3f7defc5ae16a711383f859a47bd16"/>
       <attribute name="url" value="com.sap.banking.templates/com.sap.banking.templates-1.0.0.jar"/>
-      <attribute name="size" type="Long" value="20417"/>
+      <attribute name="size" type="Long" value="20471"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708230340"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708231148"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="com.sap.banking.templates"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.v201708230340"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.v201708231148"/>
     </capability>
     <capability namespace="org.bndtools.template">
       <attribute name="org.bndtools.template" value="project"/>
