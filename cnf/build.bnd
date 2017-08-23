@@ -291,7 +291,6 @@ Bundle-Vendor: SAP ${warning;Update Bundle-Vendor in ${workspace}/cnf/build.bnd 
 	org.apache.servicemix.bundles.junit; version=4.11,\
 	org.mockito.mockito-core;version=1.9.5,\
 	org.objenesis;version=2.1.0,\
-	org.springframework.context;version=3.2
 
 -runproperties.test: \
 	tester.trace=true, \
