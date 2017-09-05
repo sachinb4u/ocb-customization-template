@@ -1,4 +1,4 @@
-#SAP Omni Channel Banking Customization Workspace
+# SAP Omni Channel Banking Customization Workspace
 
 ## OCB Customization Template Workspace provides simple and efficient way to customize Omni Channel Banking features and develop microservices on OCB platform
 
