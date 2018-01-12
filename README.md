@@ -9,7 +9,8 @@
 - SAP Omni Channel Banking 8.3 SP02+
     - Platform WAR
 
-Follow the [step by step guide](https://github.com/sachinb4u/ocb-customization-template/wiki) to customize OCB and develop microservices on OCB platform 
+## :bulb: Note
+Follow **[step by step guide](https://github.com/sachinb4u/ocb-customization-template/wiki)** to customize OCB and develop microservices on OCB platform 
 
 
 
